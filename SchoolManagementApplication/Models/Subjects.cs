@@ -16,5 +16,10 @@ namespace SchoolManagementApplication
             subname = sub;
             standard = std;
         }
+        public Subjects()
+        {
+
+        }
+
     }
 }

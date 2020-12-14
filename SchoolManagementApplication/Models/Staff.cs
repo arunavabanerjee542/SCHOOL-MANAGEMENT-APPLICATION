@@ -9,6 +9,7 @@ namespace SchoolManagementApplication
     class Staff : Person
     {
        public int salary;
+        public string TeachingOrNonTeaching;
 
     }
 }

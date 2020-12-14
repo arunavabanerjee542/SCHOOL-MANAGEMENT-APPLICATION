@@ -17,37 +17,37 @@ namespace SchoolManagementApplication
         }
 
 
-        public NonTeachingStaff(string n, Address a,int sal,string d,string t)
+        public NonTeachingStaff(string n, Address a,int sal,string d,string t,string category)
         {
             name = n;
             address = a;
            salary = sal;
             dept = d;
             type = t;
-
+            category = TeachingOrNonTeaching;
         }
 
-        public List<NonTeachingStaff> GetAllNonTeachingStaffDetails()
+        public List<NonTeachingStaff> GetAllNonTeachingStaffDetails( List<NonTeachingStaff> nt)
         {
             List<NonTeachingStaff> l = new List<NonTeachingStaff>()
             {
             
                 new NonTeachingStaff("Dubey", new Address(){ city = "Noida", state="Delhi", country = "India"},
-                           20000,"Accounts","Permanent"),
+                           20000,"Accounts","Permanent","NonTeaching" ),
 
                  new NonTeachingStaff("Pramod", new Address(){ city = "Nasik", state="Delhi", country = "India"},
-                           21000,"Accounts","Permanent"),
+                           21000,"Accounts","Permanent","NonTeaching"),
 
                   new NonTeachingStaff("Amit", new Address(){ city = "Noida", state="Delhi", country = "India"},
-                           10000,"Security","Temporary"),
+                           10000,"Security","Temporary","NonTeaching"),
 
                    new NonTeachingStaff("Raju", new Address(){ city = "Noida", state="Delhi", country = "India"},
-                           5000,"Maintainence","Temporary")
+                           5000,"Maintainence","Temporary","NonTeaching")
 
 
             };
 
-            return l;
+            return nt = l;
 
 
         }

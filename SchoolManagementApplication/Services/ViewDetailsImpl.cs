@@ -11,9 +11,11 @@ namespace SchoolManagementApplication.Services
     {
       
 
-        public void ViewStaffDetails()
+        public void ViewStaffDetails(List<TeachingStaff> t, List<NonTeachingStaff> nt)
         {
-            var teaching = getTeachingstaff();
+     
+
+            var teaching = getTeachingstaff(t);
             Console.WriteLine(" OUR TEACHING STAFFS " );
             foreach(var x in teaching)
             {
@@ -29,7 +31,7 @@ namespace SchoolManagementApplication.Services
             }
 
             Console.WriteLine();
-            var nonteaching = getNonTeachingStaff();
+            var nonteaching = getNonTeachingStaff(nt);
 
 
             Console.WriteLine(" OUR NON TEACHING STAFFS ");
@@ -53,32 +55,32 @@ namespace SchoolManagementApplication.Services
         }
 
 
-        public List<TeachingStaff> getTeachingstaff()
+        public List<TeachingStaff> getTeachingstaff(List<TeachingStaff> teaching)
         {
             TeachingStaff t = new TeachingStaff();
 
-            List<TeachingStaff> p = t.GetAllTeachingStaffDetails();
+            List<TeachingStaff> p = t.GetAllTeachingStaffDetails(teaching);
 
             return p;
 
             
         }
 
-        public List<NonTeachingStaff> getNonTeachingStaff()
+        public List<NonTeachingStaff> getNonTeachingStaff( List<NonTeachingStaff> nt)
         {
             NonTeachingStaff t = new NonTeachingStaff();
 
-            List<NonTeachingStaff> p = t.GetAllNonTeachingStaffDetails();
+            List<NonTeachingStaff> p = t.GetAllNonTeachingStaffDetails(nt);
 
             return p;
 
 
         }
 
-        public void ViewPermanentStaffs()
+        public void ViewPermanentStaffs(List<TeachingStaff> teach, List<NonTeachingStaff> nonteach)
         {
-            var teaching = getTeachingstaff();
-            var nonteaching = getNonTeachingStaff();
+            var teaching = getTeachingstaff(teach);
+            var nonteaching = getNonTeachingStaff(nonteach);
 
           IEnumerable<TeachingStaff> t =  teaching.Where(x => x.type.Equals("Permanent"));
             IEnumerable<NonTeachingStaff> nt = nonteaching.Where(x => x.type == "Permanent");

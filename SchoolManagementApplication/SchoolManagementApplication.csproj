@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Administrator.cs" />
     <Compile Include="MyFactory\Factory.cs" />
     <Compile Include="Models\NonTeachingStaff.cs" />
     <Compile Include="Models\Person.cs" />

@@ -8,9 +8,9 @@ namespace SchoolManagementApplication.Repositories
 {
     interface ViewDetailsIntf
     {
-        void ViewStaffDetails();
+        void ViewStaffDetails(List<TeachingStaff> t, List<NonTeachingStaff> nt);
 
-        void ViewPermanentStaffs();
+        void ViewPermanentStaffs(List<TeachingStaff> t, List<NonTeachingStaff> nt);
 
     }
 }
