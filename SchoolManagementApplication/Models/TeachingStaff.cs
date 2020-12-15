@@ -103,23 +103,7 @@ namespace SchoolManagementApplication
 
     
 
-         //   Console.WriteLine(ListOfTeachingStaffs.Count());
 
-
-
-          //  return ListOfTeachingStaffs;
-
-
-
-        }
-
-
-        public  void AddTeachingStaffs(TeachingStaff t, List<TeachingStaff> teaching)
-        {
-            //    List<TeachingStaff> l = GetAllTeachingStaffDetails();
-
-
-            teaching.Add(t);
 
         }
 

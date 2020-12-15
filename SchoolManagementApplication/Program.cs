@@ -31,13 +31,14 @@ namespace SchoolManagementApplication
                 logger.log(" Enter 2 to view only permanent staffs  ");
                 logger.log(" Enter 3 to view only temporary staffs  ");
                 logger.log(" Enter 4 administrator controls ");
+                logger.log(" Enter 5 To view Staffs by category and Sorted by Salary ");
 
 
                 var choice = Convert.ToInt32(Console.ReadLine());
 
                 var staffdetails = Factory.getViewDetailsImpl();
 
-                Administrator admin = new Administrator();
+                var admin = Factory.GetAdministartor();
 
 
                 switch (choice)
@@ -51,10 +52,17 @@ namespace SchoolManagementApplication
                         staffdetails.ViewPermanentStaffs(teaching,nonteaching);
                         break;
 
+                    case 3:
+                        staffdetails.ViewTemporaryStaffDetails(teaching, nonteaching);
+                        break;
+
                     case 4:
                         admin.InsertStaff(teaching,nonteaching);
                         break;
 
+                    case 5:
+                        staffdetails.GroupAndSort(teaching,nonteaching);
+                        break;
 
 
                 }

@@ -113,5 +113,117 @@ namespace SchoolManagementApplication.Services
 
 
         }
+
+
+
+
+        public void ViewTemporaryStaffDetails(List<TeachingStaff> t , List<NonTeachingStaff> nt)
+        {
+
+         var result =   t.Where(x => x.type.Equals("Temporary")).Select(x =>
+            new
+            {
+                n = x.name,
+                sal = x.salary
+            }
+
+            );
+
+            Console.WriteLine(" OUR TEACHING TEMPORARY STAFFS ");
+
+           foreach(var x in result)
+            {
+                Console.WriteLine( x.n + "  " + x.sal);
+            }
+
+
+
+            var res = nt.Where(x => x.type.Equals("Temporary")).Select(x =>
+          new
+          {
+              n = x.name,
+              sal = x.salary
+          }
+
+            );
+
+            Console.WriteLine(" OUR NON-TEACHING TEMPORARY STAFFS ");
+
+            foreach (var x in res)
+            {
+                Console.WriteLine(x.n + "  " + x.sal);
+            }
+
+
+
+
+        }
+
+
+        public void GroupAndSort(List<TeachingStaff> t , List<NonTeachingStaff> nt)
+        {
+            var res = t.GroupBy(x => x.type).Select(y =>
+           new {
+               k = y.Key,   // projecting key --> type in k 
+               s = y.OrderBy(z => z.salary)  // projectionh TeachingStaff object value in s
+
+            });
+
+
+
+            //  var r =  res.OrderBy(k => k.OrderBy(x => x.salary));
+
+            Console.WriteLine(" TEACHING STAFFS " );
+            Console.WriteLine();
+
+            foreach (var i in res)
+            {
+                Console.WriteLine( i.k +" -------> " + i.s.Count());
+                foreach(var c in i.s)
+                {
+                    Console.WriteLine(c.name + " " +  c.type + " " + c.salary);
+                }
+
+            }
+
+
+            Console.WriteLine("------------------------------------");
+
+            Console.WriteLine("NON TEACHING ");
+
+            Console.WriteLine();
+
+            var result = nt.GroupBy(x => x.type).Select(y =>
+            new
+            {
+                k = y.Key,
+                staff = y.OrderBy(c => c.salary)
+
+            }
+
+
+            );
+
+            foreach (var i in result)
+            {
+                Console.WriteLine(i.k + " -------> " + i.staff.Count());
+                foreach (var c in i.staff)
+                {
+                    Console.WriteLine(c.name + " " + c.type + " " + c.salary);
+                }
+
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
     }
 }

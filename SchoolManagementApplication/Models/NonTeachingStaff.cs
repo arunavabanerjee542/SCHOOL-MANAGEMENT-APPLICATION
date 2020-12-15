@@ -29,25 +29,24 @@ namespace SchoolManagementApplication
 
         public List<NonTeachingStaff> GetAllNonTeachingStaffDetails( List<NonTeachingStaff> nt)
         {
-            List<NonTeachingStaff> l = new List<NonTeachingStaff>()
-            {
-            
-                new NonTeachingStaff("Dubey", new Address(){ city = "Noida", state="Delhi", country = "India"},
-                           20000,"Accounts","Permanent","NonTeaching" ),
-
-                 new NonTeachingStaff("Pramod", new Address(){ city = "Nasik", state="Delhi", country = "India"},
-                           21000,"Accounts","Permanent","NonTeaching"),
-
-                  new NonTeachingStaff("Amit", new Address(){ city = "Noida", state="Delhi", country = "India"},
-                           10000,"Security","Temporary","NonTeaching"),
-
-                   new NonTeachingStaff("Raju", new Address(){ city = "Noida", state="Delhi", country = "India"},
-                           5000,"Maintainence","Temporary","NonTeaching")
 
 
-            };
+            nt.Add(new NonTeachingStaff("Dubey", new Address() { city = "Noida", state = "Delhi", country = "India" },
+                        20000, "Accounts", "Permanent", "NonTeaching"));
 
-            return nt = l;
+            nt.Add(new NonTeachingStaff("Pramod", new Address() { city = "Nasik", state = "Delhi", country = "India" },
+                      21000, "Accounts", "Permanent", "NonTeaching"));
+
+            nt.Add(new NonTeachingStaff("Amit", new Address() { city = "Noida", state = "Delhi", country = "India" },
+                           10000, "Security", "Temporary", "NonTeaching"));
+
+            nt.Add(new NonTeachingStaff("Raju", new Address() { city = "Noida", state = "Delhi", country = "India" },
+                           5000, "Maintainence", "Temporary", "NonTeaching"));
+
+
+
+
+            return nt;
 
 
         }

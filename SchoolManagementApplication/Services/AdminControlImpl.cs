@@ -1,76 +1,128 @@
 ﻿using SchoolManagementApplication.Repositories;
-using SchoolManagementApplication.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolManagementApplication.Models
+namespace SchoolManagementApplication.Services
 {
-    class Administrator
-    {  
+    class AdminControlImpl : AdminControlIntf
+    {
 
         public void InsertStaff(List<TeachingStaff> t, List<NonTeachingStaff> nt)
         {
 
-            AdminControlIntf admin = new AdminControlImpl();
 
-            admin.InsertStaff(t, nt);
-
-         /*
             string category = GetCategory();
             if (category.Equals("Teaching"))
             {
                 TeachingStaff staff = new TeachingStaff();
 
-              //  staff.TeachingOrNonTeaching = category;
-
                 List<Subjects> subb = GetSubjects();
-               // staff.sub = subb;
 
                 string n = getName();
-               // staff.name = n;
+
 
                 Address ad = getAddress();
-               // staff.address = ad;
 
                 string tpe = GetStaffType();
-              //  staff.type = tpe;
 
                 int sal = GetSalary();
-              //  staff.salary = sal;
 
-            staff.AddTeachingStaffs(new TeachingStaff()
+
+                TeachingStaff t1 = new TeachingStaff()
                 {
-                  address = ad, TeachingOrNonTeaching = category, name=n, salary= sal, sub= subb, type = tpe
-                }, t);
+                    address = ad,
+                    TeachingOrNonTeaching = category,
+                    name = n,
+                    salary = sal,
+                    sub = subb,
+                    type = tpe
 
+                };
 
-
-
-
+                t.Add(t1);
             }
-           
+
+
+
             else
             {
-              //  staff = new NonTeachingStaff();
+                NonTeachingStaff staff = new NonTeachingStaff();
+
+
+                string n = getName();
+
+
+                Address ad = getAddress();
+
+                string tpe = GetStaffType();
+
+                int sal = GetSalary();
+
+                string d = GetDepartment();
+
+               NonTeachingStaff ntt =  new NonTeachingStaff()
+                {
+                    address = ad,
+                    TeachingOrNonTeaching = category,
+                    name = n,
+                    salary = sal,
+                    dept = d,
+                    type = tpe
+                };
+
+                nt.Add(ntt);
+
             }
-
-   */
-            
-            
-
-           
-
-
 
 
 
         }
 
 
-        /*
+
+
+
+
+     
+
+
+    public string GetDepartment()
+    {
+            Console.WriteLine(" 1 --> Accounts ");
+            Console.WriteLine(" 2 --> Security ");
+            Console.WriteLine(" 3 --> Maintainence ");
+
+            int choice = 0;
+            try
+            {
+                 choice = Convert.ToInt32( Console.ReadLine());
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(" INVALID CHOICE ");
+                GetDepartment();
+            }
+            switch(choice)
+            {
+                case 1:
+                    return "Accounts";
+
+                case 2:
+                    return "Security";
+
+                case 3:
+                    return "Maintainence";
+
+               
+            }
+
+            return "";
+
+        }
+
 
         public string getName()
         {
@@ -89,7 +141,7 @@ namespace SchoolManagementApplication.Models
             {
                 ad.city = Console.ReadLine();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("INVALID INPUT");
                 getAddress();
@@ -120,8 +172,6 @@ namespace SchoolManagementApplication.Models
 
             return ad;
 
-          
-
         }
 
 
@@ -136,15 +186,15 @@ namespace SchoolManagementApplication.Models
             {
                 choice = Convert.ToInt32(Console.ReadLine());
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("INVALID INPUT ");
                 GetStaffType();
             }
 
-            if(choice==1)
+            if (choice == 1)
             {
-                return "Permanent";  
+                return "Permanent";
             }
 
             return "Temporary";
@@ -259,13 +309,15 @@ namespace SchoolManagementApplication.Models
 
 
 
-        public void UpdateStaff()
-        {
-
-        }
 
 
-    */
+
+
+
+
+
 
     }
+
+
 }

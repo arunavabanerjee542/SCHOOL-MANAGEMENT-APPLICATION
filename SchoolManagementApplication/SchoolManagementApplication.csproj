@@ -50,8 +50,10 @@
     <Compile Include="Models\Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AdminControlIntf.cs" />
     <Compile Include="Repositories\Ilogger.cs" />
     <Compile Include="Repositories\ViewDetailsIntf.cs" />
+    <Compile Include="Services\AdminControlImpl.cs" />
     <Compile Include="Services\Logger.cs" />
     <Compile Include="Services\ViewDetailsImpl.cs" />
     <Compile Include="Models\Staff.cs" />

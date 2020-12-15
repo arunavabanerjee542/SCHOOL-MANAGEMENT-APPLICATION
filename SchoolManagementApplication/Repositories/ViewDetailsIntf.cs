@@ -12,5 +12,8 @@ namespace SchoolManagementApplication.Repositories
 
         void ViewPermanentStaffs(List<TeachingStaff> t, List<NonTeachingStaff> nt);
 
+        void ViewTemporaryStaffDetails(List<TeachingStaff> t, List<NonTeachingStaff> nt);
+
+        void GroupAndSort(List<TeachingStaff> t, List<NonTeachingStaff> nt);
     }
 }

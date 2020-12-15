@@ -1,4 +1,5 @@
-﻿using SchoolManagementApplication.Repositories;
+﻿using SchoolManagementApplication.Models;
+using SchoolManagementApplication.Repositories;
 using SchoolManagementApplication.Services;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,11 @@ namespace SchoolManagementApplication.MyFactory
         static public ViewDetailsIntf getViewDetailsImpl()
         {
             return new ViewDetailsImpl();
+        }
+
+        static public Administrator GetAdministartor()
+        {
+            return new Administrator();
         }
 
     }
