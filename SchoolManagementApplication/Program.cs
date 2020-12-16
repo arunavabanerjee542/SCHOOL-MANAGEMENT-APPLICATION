@@ -18,6 +18,8 @@ namespace SchoolManagementApplication
 
             List<NonTeachingStaff> nonteaching = new List<NonTeachingStaff>();
 
+            List<Student> stulist = new List<Student>();
+
             Ilogger logger = Factory.GetLogger();
 
             logger.log(" WELCOME TO S.K.S PUBLIC SCHOOL ");
@@ -30,13 +32,15 @@ namespace SchoolManagementApplication
                 logger.log(" Enter 1 to view our staff details  ");
                 logger.log(" Enter 2 to view only permanent staffs  ");
                 logger.log(" Enter 3 to view only temporary staffs  ");
-                logger.log(" Enter 4 administrator controls ");
+                logger.log(" Enter 4 administrator controls for Staffs");
                 logger.log(" Enter 5 To view Staffs by category and Sorted by Salary ");
+                logger.log(" Enter 6 To view Student Details  ");
+                logger.log(" Enter 7 administrator control for Students ");
 
 
                 var choice = Convert.ToInt32(Console.ReadLine());
 
-                var staffdetails = Factory.getViewDetailsImpl();
+                var Viewdetails = Factory.getViewDetailsImpl();
 
                 var admin = Factory.GetAdministartor();
 
@@ -45,15 +49,15 @@ namespace SchoolManagementApplication
                 {
 
                     case 1:
-                        staffdetails.ViewStaffDetails(teaching,nonteaching);
+                        Viewdetails.ViewStaffDetails(teaching,nonteaching);
                         break;
 
                     case 2:
-                        staffdetails.ViewPermanentStaffs(teaching,nonteaching);
+                        Viewdetails.ViewPermanentStaffs(teaching,nonteaching);
                         break;
 
                     case 3:
-                        staffdetails.ViewTemporaryStaffDetails(teaching, nonteaching);
+                        Viewdetails.ViewTemporaryStaffDetails(teaching, nonteaching);
                         break;
 
                     case 4:
@@ -61,7 +65,15 @@ namespace SchoolManagementApplication
                         break;
 
                     case 5:
-                        staffdetails.GroupAndSort(teaching,nonteaching);
+                        Viewdetails.GroupAndSort(teaching,nonteaching);
+                        break;
+
+                        case 6:
+                        Viewdetails.ViewStudentDetails(stulist);
+                        break;
+
+                    case 7:
+                        admin.InsertStudentDetails(stulist);
                         break;
 
 

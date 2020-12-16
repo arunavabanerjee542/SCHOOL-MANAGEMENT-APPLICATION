@@ -11,5 +11,6 @@ namespace SchoolManagementApplication.Repositories
 
         void InsertStaff(List<TeachingStaff> t , List<NonTeachingStaff> nt);
 
+        void InsertStudent(List<Student> sl);
     }
 }

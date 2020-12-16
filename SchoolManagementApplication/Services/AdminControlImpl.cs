@@ -303,8 +303,71 @@ namespace SchoolManagementApplication.Services
 
 
 
+        public void InsertStudent(List<Student> sl)
+        {
+
+            string n = getName();
+            Address ad = getAddress();
+            char sec = GetSection();
+            int std = GetStandard();
+            int roll = GetRoll();
+
+            sl.Add(new Student(n, ad, std, sec, roll));
 
 
+        }
+
+
+        public int GetStandard()
+        {
+            Console.WriteLine(" ENTER STANDARD ");
+            int i = 0;
+            try
+            {
+                i = Convert.ToInt32(Console.ReadLine());
+            }
+            catch(Exception e)
+            {
+                GetStandard();
+            }
+
+            return i;
+        }
+
+        public char GetSection()
+        {
+
+            Console.WriteLine(" ENTER Section ");
+            char c='z';
+            try
+            {
+                c = Convert.ToChar(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                GetSection();
+            }
+
+            return c;
+
+        }
+
+        public int GetRoll()
+        {
+            Console.WriteLine(" ENTER Roll No ");
+            int i = 0;
+            try
+            {
+                i = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                GetRoll();
+            }
+
+            return i;
+
+        }
 
 
 

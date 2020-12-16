@@ -220,6 +220,29 @@ namespace SchoolManagementApplication.Services
 
 
 
+        public void ViewStudentDetails(List<Student> sl)
+        {
+
+            Student s = new Student();
+            s.GetStudentDetailsStudents(sl);
+
+           var studentdetails = sl.Select(x =>
+            new
+            {
+                n = x.name, sec = x.section, r = x.roll
+            }
+
+            );
+
+            foreach(var stu in studentdetails)
+            {
+                Console.WriteLine(stu.n + "  " + stu.sec + "  " + stu.r);
+            }
+
+
+
+        }
+
 
 
 
